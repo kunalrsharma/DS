@@ -43,3 +43,46 @@ no input
 {'k', 'u', 'f', 'i', 'e', 't', 'g', 'a'}
 ('sjfkgaiu', ['as', 'asj', 'asjf', 'asjfk', 'asjfkg', 'sjfkgai', 'sjfkgaiu'])
 
+###############################################################################################################################
+
+# Given an array of integers and a number, ouput pairs of integers from the array whose sum is target. 
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        self.nums = nums
+        self.target = target 
+        l = []
+        j=0
+        print('before')
+        for i  in range(len(nums)): 
+             if nums[i] > target:
+                return
+             else: 
+                    for j in range(i, len(nums)):  
+                          if nums[j] == target - nums[i]:    
+                                         print('i','j',nums[i], nums[j])
+                                         l.append(j)
+                                         if i !=j:l.append(i)
+                                                       
+        print('after')
+
+s = Solution()  
+s.twoSum([2,5,7,3,8],10)
+print("another one")
+s.twoSum([3,2,6,4,1,5],9)
+
+Output:
+before
+i j 2 8
+i j 5 5
+i j 7 3
+after
+another one
+before
+i j 3 6
+i j 4 5
+after
