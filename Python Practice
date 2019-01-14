@@ -1,0 +1,45 @@
+# Given a string, find the longest substring without repeated characters #
+
+def longest_substring(s):
+    if not s:
+        return 'no input'
+    start = 0
+    end = 0
+    longest = ''
+    strings = []
+    char_set = set()
+    char_set.add(s[start])
+    while end < len(s):
+            end += 1 
+            cur_char = s[end -1]
+            if cur_char not in char_set:
+                char_set.add(cur_char)
+                print(char_set)
+                if end - start > len(longest):
+                    strings.append(s[start:end])
+                    longest = s[start:end]
+                continue
+            while start < end - 1:
+                if s[start] != cur_char:
+                    char_set.remove(s[start])
+                    start += 1
+                else:  
+                    start += 1
+                    break
+    return longest, strings
+print(longest_substring(''))            
+print(longest_substring('asjfkgaiuftea'))      
+
+Output:
+no input
+{'a', 's'}
+{'a', 'j', 's'}
+{'f', 'a', 'j', 's'}
+{'k', 'j', 's', 'f', 'a'}
+{'k', 'j', 's', 'f', 'g', 'a'}
+{'k', 'j', 's', 'f', 'i', 'g', 'a'}
+{'k', 'u', 'j', 's', 'f', 'i', 'g', 'a'}
+{'k', 'u', 'f', 'i', 't', 'g', 'a'}
+{'k', 'u', 'f', 'i', 'e', 't', 'g', 'a'}
+('sjfkgaiu', ['as', 'asj', 'asjf', 'asjfk', 'asjfkg', 'sjfkgai', 'sjfkgaiu'])
+
