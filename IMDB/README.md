@@ -3,7 +3,7 @@ The aim here is to predict movie ratings from the data at IMDB.
 
 ## Assumptions and data cleaning:
 1) The files consdiered for analysis are: title.ratings.tsv, title.crew.tsv and title.basics.tsv.
-2) After merging the files, the data set is cleaned of '\N'.
+2) After merging the files, the data set is cleaned of duplicates, null values and '\N'.
 3) Then the following columns are dropped: 'endYear','originalTitle', 'isAdult' and 'writers'. The latter is 
    dropped much later into the project after analysis.
 4) 'primaryTitle' is replaced by its length
