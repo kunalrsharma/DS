@@ -12,14 +12,15 @@ The aim here is to predict movie ratings from the data at IMDB.
 6) Study of correlation heat map indicates insignificant role of 'primaryTitle' so it is dropped. 
 7) Eventually, the feature space consists of following variables: 
    'tconst','numVotes','directors','startYear','runtimeMinutes','genres'. 
-8) Finally, for modeling a regression approach is taken. Alternatively, a classification approach could be taken. 
+8) Finally, for modeling a regression approach is taken. Alternatively, a classification approach could be tried as well
+   by treating [1,2,...,10] as class labels. (partitions of length 0.5 could be used for greater precision) 
 
 ## Analysis and Modeling:
 1) First we look at the feature that's most clearly related to ratings, 'numVotes'. 
    Looking at the skewness and Kurtosis values, both of which are negative indicate
-   a lef-tailed, non-normal platykurtic distribution. As a result, outlier and noise are not significant. 
-2) After simplifing the data as mentioned above, differnt machine learning models are tried. 
-3) Firstly,  the ratinngs are not linear in the feature space. 
+   a lef-tailed, non-normal platykurtic distribution. As a result, outlier and noise are not significant(in ratings). 
+2) After simplifing the data as mentioned above, different machine learning models are tried. 
+3) Firstly,  the ratings are not linear in the feature space. 
 4) Secondly, it is quite safe to assume that users rating movies is a biased process. So the data contains high bias.
    Therefore, one of the best techqniques to deal with biased, non-linear data is boosting. 
 5) Nevertheless, we start with OLS and Ridge rigression. 
