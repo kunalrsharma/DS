@@ -26,7 +26,7 @@ The aim here is to predict movie ratings from the data at IMDB.
 5) Nevertheless, we start with OLS and Ridge rigression. 
 6) OLS summary from statsmodels.api tell us that a) Jarque-Bera is too large, confirming non-normality. b) numVotes and generes play strong roles, indicated by their coef.
 7) MSE for random forest train: 0.127, test: 0.945 and R^2 scores are close to 0. This is clearly overfitting. 
-8) Next we try Gradient bossted trees, with staged_predict() to get the optimal tree.\
+8) Next we try Gradient boosted trees, with staged_predict() to get the optimal tree.\
    For training -Mean squared error train: 0.9232997530025202 \
    For test- Mean squared error test: 0.9474101315226086 \
    Test error is pretty consistent with trainign error. 
