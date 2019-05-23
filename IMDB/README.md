@@ -29,6 +29,6 @@ The aim here is to predict movie ratings from the data at IMDB.
 8) Next we try Gradient boosted trees, with staged_predict() to get the optimal tree.\
    For training -Mean squared error train: 0.9232997530025202 \
    For test- Mean squared error test: 0.9474101315226086 \
-   Test error is pretty consistent with trainign error. 
+   Test error is pretty consistent with training error. 
 9) Though R^2 is low, given the non-linearity of the data it is expected. 
 10) Given an error of atmost 1 movie rating point, Gradient boosting is able to model the data pretty well. 
