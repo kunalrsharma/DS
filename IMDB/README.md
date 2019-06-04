@@ -22,7 +22,7 @@ The aim here is to predict movie ratings from the data at IMDB.
 2) After simplifing the data as mentioned above, different machine learning models are tried. 
 3) Firstly,  the ratings are not linear in the feature space. 
 4) Secondly, it is quite safe to assume that users rating movies is a biased process. So the data contains high bias.
-   Therefore, one of the best techqniques to deal with biased, non-linear data is boosting. 
+   Therefore, we expect strong performance from boosting, one of the best techqniques to deal with biased, non-linear data.  
 5) Nevertheless, we start with OLS and Ridge rigression. 
 6) OLS summary from statsmodels.api tell us that a) Jarque-Bera is too large, confirming non-normality. b) numVotes and generes play strong roles, indicated by their coef.
 7) MSE for random forest train: 0.127, test: 0.945 and R^2 scores are close to 0. This is clearly overfitting. 
