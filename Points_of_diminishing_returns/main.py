@@ -1,10 +1,14 @@
 
 '''
-This file takes the raw data which is in the form {(x,y,key)}
-where 'key': Ad-campaign, 
- x: price
- y: return on investment. 
+ This file takes the raw data which is in the form {(x,y,key)} where,
+ INPUT:
+ key: Ad-campaign, Type: integer
+ x: price, Type: float
+ y: return on investment, Type: float
  
+ OUTPUT:
+ (key, point of diminishing returns), type: (integer, float)
+  
  The goal here is to find the point of diminishing returns for
  each Ad-campaign. 
  As point of diminishing returns is defined as point where the 
@@ -20,7 +24,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import savgol_filter
-
+from scipy.optimize import curve_fit
 
 
 File = 'https://github.com/bindhyeswari/heroku-deploy-kunal/blob/master/ml/input_data/Data.xlsx'
@@ -125,14 +129,17 @@ def podr_full():
     return points
 
 
+   
+ # Build a non-linear regression model
+ def func(x,a,b,c,d):
+     return a*(np.exp(b*(x**c))) + d
+ 
 
 if __name__ == '__main__':
 
-    #savgol(dfe)
-    #dim_ret = podr(dfe)
-    #print("(x,y) point of diminishing return: \n", dim_ret)
     points_dim = podr_full()
     with open('Results_podr.txt', 'w') as f:
         for key, value in points_dim.items():
             f.write('%s:%s\n' % (key, value))
+    popt, pcov = curve_fit(func, dfe['x'], dfe['y])
 
