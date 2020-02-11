@@ -16,7 +16,7 @@
  where the second derviative of y as a function of x changes sign. 
  
  The above is calculated for every campaign and proceedes by first 
- smoothing the signal. 
+ smoothening the signal. 
 '''
 
 #!/usr/bin/env python3
