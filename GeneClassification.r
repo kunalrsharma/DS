@@ -1,3 +1,18 @@
+# This file achives the tasks of analyzing a genetic data and building a classification model 
+# for a specific gene. 
+# This is done in two steps:
+# 1) Reducing the dimensions of the data from 40,000 to few hundreds. Here we use Forward stage-wise regression
+#    to iteratively eliminate irrelevant features. To achieve this the data is group into homogeneous buckets. 
+# 2) Build a Logistic regression model with Lasso. The choice of L1 penalty also helps in dimension reduction as it 
+#    can move parameters to zero. 
+# In order to compensate for the limited RAM capacity and take advantage of parallel processing, we use the 
+# 'Bigstep' package. 
+# Finally, the predictions are saved in a csv file which gets uploaded in Kaggle. 
+# This project achived a 97.7% accuracy. 
+
+
+
+
 setwd("/Volumes/GoogleDrive/My Drive/Ph.D/Semester 2/Statistical Methods and Data Mining")
 list.of.packages <- c("ggplot2","stats","gtools","bigstep","glmpathcr","xgboost","ROCR","sparsediscrim","LiblineaR","SparseM",
                       "biglasso","grplasso","covTest","gglasso","bigmemory",
