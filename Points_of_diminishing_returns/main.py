@@ -7,7 +7,7 @@
  y: return on investment, Type: float
  
  OUTPUT:
- (key, point of diminishing returns), type: (integer, float)
+ (key, point of diminishing returns), Type: (integer, float)
   
  The goal here is to find the point of diminishing returns for
  each Ad-campaign. 
